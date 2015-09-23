@@ -30,5 +30,5 @@ file { '/usr/local/bin/course_selector':
 file { '/usr/local/bin/course_menu':
   ensure  => file,
   mode    => '0755',
-  content  => template('/usr/src/pltraining-course_selector/files/scripts/course_menu.rb.erb'),
+  content  => template('/usr/src/pltraining-course_selector/templates/course_menu.rb.erb'),
 }
