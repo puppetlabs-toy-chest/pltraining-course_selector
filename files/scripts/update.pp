@@ -13,22 +13,22 @@ $ruby_binary = versioncmp('4.0.0',$puppetversion) ? {
 # Make sure the module has the lastest version
 file { "${codedir}/modules/course_selector/":
   ensure  => directory,
-  source  => '/usr/src/pltraining-course_selector/',
+  source  => '/etc/puppetlabs/code/modules/course_selector/',
   recurse => true,
 }
 
 file { '/usr/local/bin/course_update':
   ensure  => file,
   mode    => '0755',
-  source  => '/usr/src/pltraining-course_selector/files/scripts/course_update.rb',
+  source  => '/etc/puppetlabs/code/modules/course_selector/files/scripts/course_update.rb',
 }
 file { '/usr/local/bin/course_selector':
   ensure  => file,
   mode    => '0755',
-  source  => '/usr/src/pltraining-course_selector/files/scripts/course_selector.rb',
+  source  => '/etc/puppetlabs/code/modules/course_selector/files/scripts/course_selector.rb',
 }
 file { '/usr/local/bin/course_menu':
   ensure  => file,
   mode    => '0755',
-  content  => template('/usr/src/pltraining-course_selector/templates/course_menu.rb.erb'),
+  content  => template('/etc/puppetlabs/code/modules/course_selector/templates/course_menu.rb.erb'),
 }

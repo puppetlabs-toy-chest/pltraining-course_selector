@@ -9,10 +9,10 @@ puts
 puts "Updating course content, please stand by."
 
 # Pull latest files
-%x(cd /usr/src/pltraining-course_selector && git pull)
+%x(cd /etc/puppetlabs/code/modules/course_selector && git pull)
 
 # Update courseware content
-%x(puppet apply /usr/src/pltraining-course_selector/files/scripts/update.pp)
+%x(puppet apply -e 'include course_selector')
 
 # Run course_update script
 %x(/usr/local/bin/course_update)
