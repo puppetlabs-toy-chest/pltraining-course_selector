@@ -10,7 +10,6 @@ class profile::base {
   }
 
   # Example of class declaration using include
-  include logrotate::base
   include classroom::agent::hosts
 
   # Example of resource-like class declaration
@@ -18,13 +17,4 @@ class profile::base {
     client_package => 'openssh-clients',
   }
 
-  # Example of using a defined type
-  logrotate::rule { 'messages':
-    path         => '/var/log/messages',
-    rotate       => 10,
-    size         => '200k',
-    shred        => true,
-    rotate_every => 'week',
-    postrotate   => '/usr/bin/killall -HUP syslogd',
-  }
 }

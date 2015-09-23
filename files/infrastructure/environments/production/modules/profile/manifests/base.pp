@@ -11,8 +11,6 @@ class profile::base {
 
   # Class declaration using include
   # use appropriate syntax to declare the class
-  # logrotate::base
-  include 
   include classroom::agent::hosts
   # Resource-like class declaration
   # Declare the appropriate class to manage SSH clients below:
@@ -20,15 +18,4 @@ class profile::base {
   class { '':
   }
 
-  # Using a defined type
-  # Ensure that the logs are rotated every week
-
-  logrotate::rule { 'messages':
-    path         => '/var/log/messages',
-    rotate       => 10,
-    size         => '200k',
-    shred        => true,
-    rotate_every => '',
-    postrotate   => '/usr/bin/killall -HUP syslogd',
-  }
 }
