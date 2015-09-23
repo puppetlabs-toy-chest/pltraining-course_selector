@@ -10,11 +10,13 @@ $ruby_binary = versioncmp('4.0.0',$puppetversion) ? {
   default => '/bin/ruby'
 }
 
+# Make sure the module has the lastest version
 file { "${codedir}/modules/course_selector/":
   ensure  => directory,
   source  => '/usr/src/pltraining-course_selector/',
   recurse => true,
 }
+
 file { '/usr/local/bin/course_update':
   ensure  => file,
   mode    => '0755',
