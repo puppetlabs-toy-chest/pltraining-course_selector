@@ -1,6 +1,13 @@
 class profile::mysqldb {
+  $override_options = {
+    'mysqld' => {
+      'bind-address' => '0.0.0.0',
+    }
+  } 
   class { 'mysql::server':
-    root_password => 'supersekrit',
+    root_password    => 'supersekrit',
+    override_options => $override_options,
+    restart          => true,
   }
   mysql::db {'wordpress':
     user     => 'wordpress',
