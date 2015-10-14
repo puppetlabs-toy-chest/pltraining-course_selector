@@ -8,6 +8,10 @@ base_users:
   jim:
     ensure: 'present'
     groups:
-      - 'web_admins'
-      - 'sudoers'
+      - 'ftp'
+      - 'tape'
+  mary:
+    ensure: 'present'
+    groups:
       - 'wheel'
+      - 'tty'

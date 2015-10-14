@@ -7,5 +7,5 @@ base_software:
 base_users:
   jim:
     groups:
-      - 'regular_users'
+      - 'users'
 test: 'foo'

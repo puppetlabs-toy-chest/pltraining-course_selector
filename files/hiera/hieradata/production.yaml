@@ -6,6 +6,6 @@ base_users:
   bob:
     ensure: 'present'
     groups:
-      - 'regular_users'
+      - 'users'
   jim:
     ensure: 'absent'
