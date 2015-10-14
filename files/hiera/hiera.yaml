@@ -1,9 +1,8 @@
 ---
 :hierarchy:
-  - "%{environment}"
   - "%{clientcert}"
+  - "%{environment}"
   - common
-  - global
 :backends:
   - yaml
 
