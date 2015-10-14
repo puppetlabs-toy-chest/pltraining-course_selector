@@ -2,7 +2,7 @@ class course_selector (
   $course = $course_selector::prarams::course,
   $codedir = $course_selector::params::codedir,
   $ruby_binary = $course_selector::params::ruby_binary
-) inherit course_selector::params {
+) inherits course_selector::params {
   include course_selector::hiera_files
 
   file { '/usr/local/bin/course_update':
