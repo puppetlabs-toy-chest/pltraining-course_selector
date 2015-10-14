@@ -1,5 +1,5 @@
 class course_selector (
-  $course = $course_selector::prarams::course,
+  $course = $course_selector::params::course,
   $codedir = $course_selector::params::codedir,
   $ruby_binary = $course_selector::params::ruby_binary
 ) inherits course_selector::params {
