@@ -1,0 +1,15 @@
+---
+message: 'This is a message from jimbob.puppetlabs.vm.yaml'
+base_software:
+  - 'cowsay'
+  - 'bash'
+base_users:
+  jim:
+    ensure: 'present'
+    groups:
+      - 'wheel'
+      - 'tty'
+  bob:
+    ensure: 'present'
+    groups:
+      - 'games'

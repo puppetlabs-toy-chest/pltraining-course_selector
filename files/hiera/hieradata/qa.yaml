@@ -1,0 +1,8 @@
+---
+message: 'This message is from the QA environment'
+base_software:
+  - 'gcc'
+  - 'ruby'
+base_users:
+  jim:
+    ensure: 'absent'

@@ -1,0 +1,17 @@
+---
+message: 'This message is from the Development environment'
+base_software:
+  - 'make'
+  - 'gcc'
+  - 'ruby'
+base_users:
+  jim:
+    ensure: 'present'
+    groups:
+      - 'ftp'
+      - 'tape'
+  mary:
+    ensure: 'present'
+    groups:
+      - 'wheel'
+      - 'tty'

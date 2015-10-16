@@ -1,0 +1,11 @@
+---
+base_software:
+  - 'iptables'
+  - 'ssh'
+base_users:
+  bob:
+    ensure: 'present'
+    groups:
+      - 'users'
+  jim:
+    ensure: 'absent'

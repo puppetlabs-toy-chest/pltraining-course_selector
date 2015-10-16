@@ -1,2 +1,11 @@
 ---
-message: This is the message from common.yaml
+message: 'This is the message from common.yaml'
+base_software:
+  - 'vim'
+  - 'less'
+  - 'fortune'
+base_users:
+  jim:
+    groups:
+      - 'users'
+test: 'foo'
