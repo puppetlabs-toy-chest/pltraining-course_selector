@@ -1,0 +1,6 @@
+---
+dns_server: "devdns.puppetlabs.vm"
+package_list:
+  - "vim"
+  - "gcc"
+  - "cowsay"

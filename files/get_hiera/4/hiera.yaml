@@ -1,0 +1,7 @@
+---
+:backends: "yaml"
+:yaml:
+  :datadir: "/etc/puppetlabs/code/hieradata/"
+    - "nodes/%{clientcert}"
+    - "%{datacenter}/%{environment}"
+    - "common"
