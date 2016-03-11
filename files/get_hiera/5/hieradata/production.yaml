@@ -1,0 +1,4 @@
+---
+dns_server: "proddns.puppetlabs.vm"
+package_list:
+  - "vi"
