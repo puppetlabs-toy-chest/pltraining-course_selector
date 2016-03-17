@@ -1,5 +1,5 @@
 class course_selector::course::get_hiera1 (
-  $unit => '1'
+  $unit = '1'
 ){
   file { "/etc/puppetlabs/code/hieradata":
     ensure  => directory,
