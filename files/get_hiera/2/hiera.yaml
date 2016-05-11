@@ -2,5 +2,6 @@
 :backends: "yaml"
 :yaml:
   :datadir: "/etc/puppetlabs/code/hieradata/"
-    - "%{environment}"
-    - "common"
+:hierarchy:
+  - "%{environment}"
+  - "common"
