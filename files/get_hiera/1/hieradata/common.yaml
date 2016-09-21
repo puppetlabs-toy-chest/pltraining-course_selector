@@ -1,2 +1,2 @@
 ---
-message: "Welcome to $::hostname. Don't break anything!"
+message: "Welcome to try.puppet.com. Don't break anything!"
