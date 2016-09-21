@@ -20,6 +20,11 @@ class course_selector::course::get_hiera3 (
     replace => false,
     source  => "puppet:///modules/course_selector/get_hiera/${unit}/hieradata/common.yaml",
   }
+  file { "/root/puppetcode/modules/examples":
+    ensure  => directory,
+    recurse => true,
+    source  => "puppet:///modules/course_selector/get_hiera/${unit}/examples",
+  }
   file { "/root/puppetcode/hieradata/nodes/${::fqdn}.yaml":
     ensure  => file,
     replace => false,
