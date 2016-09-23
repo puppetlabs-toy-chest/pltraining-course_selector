@@ -1,5 +1,5 @@
 class course_selector::hiera_files {
-  file { "${course_selector::codedir}/hiera.yaml":
+  file { "${course_selector::confdir}/hiera.yaml":
     ensure => present,
     source => "puppet:///modules/course_selector/${course_selector::course}/hiera.yaml",
   }

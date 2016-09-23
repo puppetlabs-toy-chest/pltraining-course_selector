@@ -1,6 +1,7 @@
 class course_selector (
   $course = $course_selector::params::course,
   $codedir = $course_selector::params::codedir,
+  $confdir = $course_selector::params::confdir,
   $ruby_binary = $course_selector::params::ruby_binary
 ) inherits course_selector::params {
   include course_selector::hiera_files
