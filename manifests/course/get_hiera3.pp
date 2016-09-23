@@ -7,7 +7,7 @@ class course_selector::course::get_hiera3 (
     replace => false,
     source  => "puppet:///modules/course_selector/get_hiera/${unit}/hieradata",
   }
-  file { "/etc/puppetlabs/code/hiera.yaml":
+  file { "/etc/puppetlabs/puppet/hiera.yaml":
     ensure  => file,
     replace => false,
     source  => "puppet:///modules/course_selector/get_hiera/${unit}/hiera.yaml",

@@ -1,5 +1,5 @@
 ---
-message: "Welcome to $::hostname. Don't break anything!"
+message: "Welcome to %{::hostname}. Don't break anything!"
 package_list:
   - "dig"
   - "ssh"
