@@ -1,0 +1,3 @@
+---
+message: "This is a development server"
+dns_server: "devdns.puppetlabs.vm"

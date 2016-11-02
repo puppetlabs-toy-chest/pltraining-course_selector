@@ -1,7 +1,7 @@
 class course_selector::course::get_hiera4 (
   $unit = '4'
 ){
-  file { "/etc/puppetlabs/code/hieradata":
+  file { "/etc/puppetlabs/code/environments/production/hieradata":
     ensure  => directory,
     recurse => true,
     source  => "puppet:///modules/course_selector/get_hiera/${unit}/hieradata",
