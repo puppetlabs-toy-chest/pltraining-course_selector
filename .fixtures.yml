@@ -1,0 +1,8 @@
+fixtures:
+  symlinks:
+    course_selector: "#{source_dir}"
+  repositories:
+  forge_modules:
+    stdlib:
+      repo: "puppetlabs/stdlib"
+      ref: "4.12.0"
