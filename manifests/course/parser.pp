@@ -7,5 +7,6 @@ class course_selector::course::parser {
   exec {'puppet module install puppet-nginx --modulepath=/etc/puppetlabs/code/modules':
     path => '/usr/local/bin:/bin'
   }
+  include userprefs::profile
   include userprefs::vim
 }
