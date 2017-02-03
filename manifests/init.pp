@@ -21,6 +21,9 @@ class course_selector (
     mode    => '0755',
     content  => template('course_selector/course_menu.rb.erb'),
   }
+  file { '/root/puppetcode':
+    ensure => directory,
+  }
   file { '/root/puppetcode/modules':
     ensure  => directory,
     recurse => true,
