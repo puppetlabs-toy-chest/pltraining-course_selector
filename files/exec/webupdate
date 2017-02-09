@@ -1,0 +1,8 @@
+#! /bin/bash
+
+# This is an example of a script to update a webapp
+# it doesn't actually do anything but a real world example
+# might trigger an api endpoint to reload users or
+# send a HUP signal to a running process
+
+echo "Webusers successfully updated"
