@@ -1,0 +1,66 @@
+#! /bin/bash
+# This is is a basic example of a script with embedded business logic.
+#
+# The premise is that there is a web app that expects users to have
+# a system user account that is a member of the 'webusers' group
+# and be added to the flat file list of users presumably to be accessed
+# by the backend in some way.
+#
+# The code is intentionally non-idempotent and will continually add
+# duplicate records to the /etc/webusers file.
+
+command=$1
+username=$2
+case $command in
+  add)
+    (
+			# Create system user
+      useradd $username
+
+			# Add user to the webusers list
+      echo $username >> /etc/webusers
+
+			# Add user to the webusers system group
+      gpasswd -a $username webusers
+    ) &> /dev/null #Hide command output
+    echo "$username successfully created."
+    exit 0
+    ;;
+  del)
+    (
+			# Remove system user
+      userdel $username
+
+			# Remove user from the webusers list
+      sed -i "/$username/d" /etc/webusers
+
+			# Remove user from system group
+      gpasswd -d $username webusers
+    ) &> /dev/null
+    echo "$username successfully deleted."
+    exit 0
+    ;;
+  check)
+    if ( 
+			# Check if system user exists
+      id $username &&
+
+			# Check if user is in the webusers group
+      groups $username | grep 'webusers' &&
+
+			# Check if user is listed in the webusers list
+      grep $username /etc/webusers 
+      ) &> /dev/null
+    then
+      echo "$username exists."
+      exit 0
+    else
+      echo "$username does not exist."
+      exit 1
+    fi
+    ;; 
+  *)
+    echo "Invalid command"
+    exit 1
+    ;;  
+esac
