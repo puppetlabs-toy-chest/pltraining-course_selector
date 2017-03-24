@@ -1,6 +1,4 @@
 class course_selector::course::exec {
-  include course_selector
-  include mysql
   group { 'webusers':
     ensure => present
   }
