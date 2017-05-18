@@ -5,7 +5,8 @@ class course_selector::course::parser {
     source  => 'puppet:///modules/course_selector/parser/example_modules',
   }
   exec {'puppet module install puppet-nginx --modulepath=/etc/puppetlabs/code/modules':
-    path => '/usr/local/bin:/bin'
+    path   => '/usr/local/bin:/bin',
+    unless => 'puppet module list | grep puppet-nginx',
   }
   # Make sure there is some kind of .profile for userprefs
   file {'/root/.profle':
