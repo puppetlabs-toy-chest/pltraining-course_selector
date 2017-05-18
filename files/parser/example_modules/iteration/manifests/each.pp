@@ -22,7 +22,7 @@ class iteration::each (
     require => File["/var/www/larry"],
   }
 
-  nginx::resource::vhost { "larrysblog.puppetlabs.vm":
+  nginx::resource::server { "larrysblog.puppetlabs.vm":
     www_root => $websites["larrysblog.puppetlabs.vm"]["docroot"],
   }
 }

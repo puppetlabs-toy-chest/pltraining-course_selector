@@ -20,7 +20,7 @@ class iteration::functions (
   
   include nginx
   $published_sites.each |$site_fqdn, $site_info| {
-    nginx::resource::vhost { $site_fqdn:
+    nginx::resource::server { $site_fqdn:
       www_root => $site_info["docroot"],
     }
   }
